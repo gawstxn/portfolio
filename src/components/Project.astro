@@ -1,0 +1,29 @@
+---
+import { Badge } from "./ui/badge"
+import { projects } from "@/content/data"
+---
+
+<section class="w-full grid grid-cols-1 md:grid-cols-[30%_70%] gap-y-6 animate-fade-up animate-once animate-ease-in-out">
+    <h1 class="text-xl font-bold">Projects</h1>
+    <div class="flex flex-col justify-center gap-y-4">
+        {projects.map(data => (
+            <a href={data.link} target={data.link !== "#" ? "_blank" : undefined} class="w-full p-4 border hover:border-primary/30 rounded-md bg-primary-foreground/50 duration-150">
+                <div class="flex justify-between items-center">
+                    <h1 class="text-lg font-semibold">{data.name}</h1>
+                    <h1 class="text-lg font-semibold">{data.year}</h1>
+                </div>
+                <p class="text-muted-foreground text-sm mb-1">{data.desc}</p>
+                <ul class="list-disc">
+                    {data.details.map(item => (
+                        <li class="list-outside ml-4 text-sm">{item}</li>
+                    ))}
+                </ul>
+                <div class="flex flex-wrap items-center gap-2 mt-3">
+                    {data.stack.map(item => (
+                        <Badge variant={"outline"} className="rounded-full">{item}</Badge>
+                    ))}
+                </div>
+            </a>
+        ))}
+    </div>
+</section>

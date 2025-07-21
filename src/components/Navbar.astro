@@ -1,0 +1,14 @@
+---
+import { ModeToggle } from "@/components/ModeToggle"
+const time = new Date().getTime()
+---
+
+<header class="bg-background text-foreground w-full">
+    <nav class="flex justify-between items-center text-lg font-semibold">
+        <a href="/">gawstxn</a>
+        <div class="flex items-center gap-4">
+            <a href="/">Resume</a>
+            <ModeToggle client:load/>
+        </div>
+    </nav>
+</header>

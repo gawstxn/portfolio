@@ -1,0 +1,11 @@
+---
+
+---
+
+<div id="progress" class="fixed top-0 left-0 w-full bg-green-300 h-1 z-[999]"></div>
+
+<script is:inline type="module">
+    import { animate, scroll } from "https://cdn.jsdelivr.net/npm/motion@12.23.0/+esm"
+
+    scroll(animate("#progress", { width: ["0", "100%"] }, { ease: "linear" }))
+</script>

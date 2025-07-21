@@ -1,0 +1,32 @@
+---
+import '@/styles/global.css'
+const {
+  title = 'My Website',
+  description = 'This is my awesome Astro site!',
+  image = '/social-card.png',
+  url = Astro.url.pathname,
+} = Astro.props
+
+const fullUrl = new URL(url, Astro.site).href
+---
+
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>{title} • gawstxn</title>
+<meta name="description" content={description} />
+
+<!-- Canonical URL -->
+<link rel="canonical" href={fullUrl} />
+
+<!-- Open Graph -->
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={image} />
+<meta property="og:url" content={fullUrl} />
+<meta property="og:type" content="website" />
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={image} />

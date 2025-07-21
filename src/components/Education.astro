@@ -1,0 +1,19 @@
+---
+import { educations } from "@/content/data"
+---
+
+<section class="w-full grid grid-cols-1 md:grid-cols-[30%_70%] gap-y-6 animate-fade-up animate-once animate-ease-in-out">
+    <h1 class="text-xl font-bold">Education</h1>
+    <div class="flex flex-col justify-center gap-y-4">
+        {educations.map(data => (
+            <div class="w-full p-4 border rounded-md bg-primary-foreground/50">
+                <h1 class="text-lg font-semibold">{data.name}</h1>
+                <p class="text-muted-foreground text-sm">{data.branch}</p>
+                <div class="flex items-center gap-4">
+                    <p class="text-muted-foreground text-sm">{data.year}</p>
+                    <p class="text-muted-foreground text-sm">GPAX - {data.grade}</p>
+                </div>
+            </div>
+        ))}
+    </div>
+</section>
