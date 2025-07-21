@@ -3,11 +3,13 @@ import BaseHead from "@/components/BaseHead.astro"
 import Navbar from "@/components/Navbar.astro"
 import Footer from "@/components/Footer.astro"
 import Progress from "@/components/Progress.astro"
+
+const { title }  = Astro.props
 ---
 
 <html lang="en">
 	<head>
-        <BaseHead title="Index" description="Welcome to my portfolio website."/>
+        <BaseHead title={title} description="Welcome to my portfolio website."/>
 	</head>
     <body class="flex justify-between bg-background">
         <main class="flex min-h-screen w-screen mx-auto max-w-[60rem] flex-col items-center py-8 md:px-10 px-6 gap-y-12">

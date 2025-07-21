@@ -1,16 +1,18 @@
 ---
-import { Badge } from "./ui/badge"
+import Layout from "@/layout/Layout.astro"
+import { Button } from "@/components/ui/button"
+import { Badge } from "@/components/ui/badge"
+import { ArrowLeft } from "lucide-react"
 import { projects } from "@/content/data"
-import { Button } from "./ui/button"
-import { ArrowUpRight } from "lucide-react"
-
-const projectPreview = projects.slice(0, 3)
 ---
 
-<section class="w-full grid grid-cols-1 md:grid-cols-[30%_70%] gap-y-6 animate-fade-up animate-once animate-ease-in-out">
-    <h1 class="text-xl font-bold">Projects</h1>
-    <div class="flex flex-col justify-center gap-y-4">
-        {projectPreview.map(data => (
+<Layout title="Projects">
+    <section class="w-full flex flex-col gap-y-6 animate-fade-up animate-once animate-ease-in-out">
+        <a href="/">
+            <Button variant={"outline"} className="cursor-pointer"><ArrowLeft/>Back</Button>
+        </a>
+        <h1 class="text-4xl font-bold">Projects</h1>
+        {projects.map(data => (
             <a href={data.link} target={data.link !== "#" ? "_blank" : undefined} class="w-full p-4 border hover:border-primary/30 rounded-md bg-primary-foreground/50 duration-150">
                 <div class="flex justify-between items-center">
                     <h1 class="text-lg font-semibold">{data.name}</h1>
@@ -29,8 +31,5 @@ const projectPreview = projects.slice(0, 3)
                 </div>
             </a>
         ))}
-        <a href="/project" class="flex justify-center">
-            <Button variant={"ghost"} className="cursor-pointer underline text-muted-foreground">See all projects<ArrowUpRight/></Button>
-        </a>
-    </div>
-</section>
+    </section>
+</Layout>
