@@ -32,7 +32,7 @@ export const projects = [
             "Built a custom admin dashboard to manage product listings and track user orders.Tested performance of different database query strategies."
         ],
         stack: [
-            "Express.JS", "EJS", "TailwindCSS"
+            "Express.JS", "Sequelize", "EJS", "TailwindCSS"
         ],
         year: 2024,
         link: "https://github.com/gawstxn/Front-End-Prisoner"
