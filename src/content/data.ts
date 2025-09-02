@@ -1,5 +1,17 @@
 export const projects = [
     {
+        name: "Promptpay QRCode",
+        desc: "Independent Project",
+        details: [
+            "Create a Promptpay QRCode Generator"
+        ],
+        stack: [
+            "Next.js", "TailwindCSS", "Shadcn/UI"
+        ],
+        year: 2025,
+        link: "https://gawstxn-promptpay-qr.vercel.app/"
+    },
+    {
         name: "Expense Tracker (Private)",
         desc: "Independent Project",
         details: [
